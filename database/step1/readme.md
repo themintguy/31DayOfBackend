@@ -1,0 +1,1 @@
+\c db_name connects to a database

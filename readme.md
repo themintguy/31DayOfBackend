@@ -1,21 +1,14 @@
-# Tech Stack
 
-- express
-- typescript
-- REST APIS
-- axios 
-- why axios >>> fetch
-- jwt 
-- jwt with httpCookie
+**Stage 1: Core SQL Foundations**
 
-A login/signup/dashboard
+* Understanding databases, tables, and data types
+* Basic SQL operations: `SELECT`, `INSERT`, `UPDATE`, `DELETE`
+* Filtering, sorting, and aggregating data (`WHERE`, `ORDER BY`, `GROUP BY`)
+* Primary keys, foreign keys, constraints
 
-jwt 
+**Stage 2: PostgreSQL Deep Dive**
 
-Just store the user data in Postgres, you can use local storage (frontend) to store when a user is logged in (JWT)
-
-Dashboard, display a dummy user balance, initially 0$
-
-There will be a button there to tap to increase balance by 1$ and update in the db
-
-And another button to send some money to another user by email 
+* Schema design (normalization, relationships)
+* Indexes and performance basics
+* Functions, views, and stored procedures
+* Transactions and ACID concepts
