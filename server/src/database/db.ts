@@ -1,10 +1,7 @@
 import { Pool } from "pg";
-import dotenv from "dotenv";
-dotenv.config();
 
-
-//testing
-// console.log(" DB password loaded?", process.env.DB_PASSWORD ? "yes" : "no");
+// testing
+console.log(" DB password loaded?", process.env.DB_PASSWORD ? "yes" : "no");
 
 
 export const pool = new Pool({

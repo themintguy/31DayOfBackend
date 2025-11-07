@@ -3,3 +3,7 @@ export interface IError {
     message: string;
     details?: any;
 }
+
+export interface Users {
+    
+}

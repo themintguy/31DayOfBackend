@@ -5,10 +5,6 @@ import morgan from "morgan";
 import { errHandler } from "./middlewares/errorHandler";
 import authRoutes from "./routes/UserRoutes"
 import cookieParser from "cookie-parser";
-import dotenv from "dotenv";
-dotenv.config();
-
-
 
 const app: Application = express();
 
