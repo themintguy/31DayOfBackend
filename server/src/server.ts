@@ -1,10 +1,13 @@
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
-import helmet from "helmet";
 import morgan from "morgan";
 import { errHandler } from "./middlewares/errorHandler";
 import authRoutes from "./routes/UserRoutes"
 import cookieParser from "cookie-parser";
+import userRoutes from "./routes/getInfoRoutes";
+import transactionsRoutes from "./routes/userTranscations";
+import sendMoney from "./routes/userTranscations"
+
 
 const app: Application = express();
 
@@ -18,17 +21,11 @@ app.use(cookieParser());
 app.use(morgan("dev")); 
 app.use(express.json()); 
 
-// app.get(
-//   "/api",
-//   catchAsync(async (req, res) => {
-//     // simulate error
-//     throw new CustomError("This is a custom error", 400);
-//   })
-// );
 
-
-
+app.use("/transactions",transactionsRoutes)
 app.use("/auth",authRoutes);
+app.use("/user-info",userRoutes);
+app.use("/",sendMoney)
 
 
 app.use(errHandler);

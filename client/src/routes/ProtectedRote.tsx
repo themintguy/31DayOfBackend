@@ -20,7 +20,7 @@ const ProtectedRoute = ({children}: ProtectedRouteProps) => {
     useEffect(()=>{
         const checkAuth = async()=>{
             try{
-                await axios.get(`${API_URL_AUTH}/verify`, { withCredentials: true })
+                await axios.get(`${API_URL_AUTH}/auth/verify`, { withCredentials: true })
                 setIsAuth(true);
             } catch{
                 setIsAuth(false);
