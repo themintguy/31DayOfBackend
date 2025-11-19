@@ -1,21 +1,20 @@
 import { Pool } from "pg";
 
-// testing
-console.log(" DB password loaded?", process.env.DB_PASSWORD ? "yes" : "no");
+const connectionString = process.env.DATABASE_URL;
 
-
-export const pool = new Pool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: Number(process.env.DB_PORT),
-  ssl: {
-    rejectUnauthorized: false,
-  },
+ const pool = new Pool({
+    connectionString:connectionString,
 });
 
-pool
-  .connect()
-  .then(() => console.log(" Connected to PostgreSQL"))
-  .catch((err) => console.error("Database connection error:", err));
+
+  const connectToDatabase = async ()=>{
+    try {
+        const client = await pool.connect();
+        console.log('DB is conncted');
+        client.release();
+    } catch(err){
+        console.error("error not conncted to db",err);
+    }
+};
+
+export {pool , connectToDatabase};
